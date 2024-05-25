@@ -14,7 +14,7 @@ class _Body extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Title(imageColor: Colors.brown, textColor: Colors.white),
+            const Title(imageColor: Colors.black, textColor: Colors.white),
 
             const _Form(),
 

@@ -3,7 +3,7 @@
     "short_name": "task_manager_app",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#000000f",
     "theme_color": "#0175C2",
     "description": "Example Task Manager App",
     "orientation": "portrait-primary",

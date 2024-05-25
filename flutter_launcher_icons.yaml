@@ -4,7 +4,9 @@ flutter_launcher_icons:
   web:
     generate: true
     image_path: "images/pin.png"
-    background_color: "#ffffff"
+    background_color: "#000000f"
   remove_alpha_ios: true
+  background_color_ios: "#000000f"
   image_path: "images/pin.png"
   min_sdk_android: 16
+  adaptive_icon_background: "#000000f"
