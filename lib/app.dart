@@ -9,6 +9,7 @@ import 'package:task_manager_app/blocs/blocs.dart';
 import 'package:task_manager_app/constants/constants.dart';
 import 'package:task_manager_app/navigation/navigation.dart';
 import 'package:task_manager_app/services/logging_service.dart';
+import 'package:task_manager_app/services/login_service.dart';
 
 /// This is the starting point for the widget tree
 
@@ -30,6 +31,9 @@ class _TaskManagerAppState extends State<TaskManagerApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider.value(value: _pagesBloc),
+        BlocProvider(
+          create: (context) => LoginBloc(context.read<LoginService>()),
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: CustomRouter(

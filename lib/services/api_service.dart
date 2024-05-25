@@ -11,7 +11,7 @@ abstract class APIService<T> extends HTTPService<T> {
   /// Creates a new [APIService] instance
   ///
   /// Pass an optional [Client] for handling HTTP calls
-  APIService({super.client, String? host}) : super(host: host ?? Urls.live);
+  APIService({super.client, String? host}) : super(host: host ?? Urls.dummy);
 
   @override
   Future<HTTPResponseSchema<Map<String, Object?>>> parseResponse(

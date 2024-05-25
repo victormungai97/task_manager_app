@@ -3,13 +3,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:http_interceptor/http/intercepted_client.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:task_manager_app/app.dart';
 import 'package:task_manager_app/blocs/blocs.dart';
 import 'package:task_manager_app/firebase_options.dart';
+import 'package:task_manager_app/networking/networking.dart';
 import 'package:task_manager_app/services/logging_service.dart';
+import 'package:task_manager_app/services/login_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,5 +68,21 @@ void main() async {
   // Observe state changes
   Bloc.observer = const CustomBlocObserver();
 
-  runApp(const TaskManagerApp());
+  final interceptedClient = InterceptedClient.build(
+    retryPolicy: ApiRequestRetryPolicy(),
+    interceptors: [ApiInterceptor(), LoggingInterceptor()],
+    client: httpClient,
+    requestTimeout: const Duration(seconds: 30),
+  );
+
+  runApp(
+    MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider(
+          create: (_) => LoginService(client: interceptedClient),
+        ),
+      ],
+      child: const TaskManagerApp(),
+    ),
+  );
 }

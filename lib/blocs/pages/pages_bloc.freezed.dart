@@ -37,20 +37,20 @@ mixin _$PageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Navigated value) navigated,
+    required TResult Function(_PageStarted value) started,
+    required TResult Function(_PageNavigated value) navigated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_Navigated value)? navigated,
+    TResult? Function(_PageStarted value)? started,
+    TResult? Function(_PageNavigated value)? navigated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Navigated value)? navigated,
+    TResult Function(_PageStarted value)? started,
+    TResult Function(_PageNavigated value)? navigated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,25 +74,25 @@ class _$PageEventCopyWithImpl<$Res, $Val extends PageEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$PageStartedImplCopyWith<$Res> {
+  factory _$$PageStartedImplCopyWith(
+          _$PageStartedImpl value, $Res Function(_$PageStartedImpl) then) =
+      __$$PageStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$PageEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$PageStartedImplCopyWithImpl<$Res>
+    extends _$PageEventCopyWithImpl<$Res, _$PageStartedImpl>
+    implements _$$PageStartedImplCopyWith<$Res> {
+  __$$PageStartedImplCopyWithImpl(
+      _$PageStartedImpl _value, $Res Function(_$PageStartedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$PageStartedImpl implements _PageStarted {
+  const _$PageStartedImpl();
 
   @override
   String toString() {
@@ -102,7 +102,7 @@ class _$StartedImpl implements _Started {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is _$PageStartedImpl);
   }
 
   @override
@@ -142,8 +142,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Navigated value) navigated,
+    required TResult Function(_PageStarted value) started,
+    required TResult Function(_PageNavigated value) navigated,
   }) {
     return started(this);
   }
@@ -151,8 +151,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_Navigated value)? navigated,
+    TResult? Function(_PageStarted value)? started,
+    TResult? Function(_PageNavigated value)? navigated,
   }) {
     return started?.call(this);
   }
@@ -160,8 +160,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Navigated value)? navigated,
+    TResult Function(_PageStarted value)? started,
+    TResult Function(_PageNavigated value)? navigated,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,25 +171,25 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements PageEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class _PageStarted implements PageEvent {
+  const factory _PageStarted() = _$PageStartedImpl;
 }
 
 /// @nodoc
-abstract class _$$NavigatedImplCopyWith<$Res> {
-  factory _$$NavigatedImplCopyWith(
-          _$NavigatedImpl value, $Res Function(_$NavigatedImpl) then) =
-      __$$NavigatedImplCopyWithImpl<$Res>;
+abstract class _$$PageNavigatedImplCopyWith<$Res> {
+  factory _$$PageNavigatedImplCopyWith(
+          _$PageNavigatedImpl value, $Res Function(_$PageNavigatedImpl) then) =
+      __$$PageNavigatedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? route});
 }
 
 /// @nodoc
-class __$$NavigatedImplCopyWithImpl<$Res>
-    extends _$PageEventCopyWithImpl<$Res, _$NavigatedImpl>
-    implements _$$NavigatedImplCopyWith<$Res> {
-  __$$NavigatedImplCopyWithImpl(
-      _$NavigatedImpl _value, $Res Function(_$NavigatedImpl) _then)
+class __$$PageNavigatedImplCopyWithImpl<$Res>
+    extends _$PageEventCopyWithImpl<$Res, _$PageNavigatedImpl>
+    implements _$$PageNavigatedImplCopyWith<$Res> {
+  __$$PageNavigatedImplCopyWithImpl(
+      _$PageNavigatedImpl _value, $Res Function(_$PageNavigatedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -197,7 +197,7 @@ class __$$NavigatedImplCopyWithImpl<$Res>
   $Res call({
     Object? route = freezed,
   }) {
-    return _then(_$NavigatedImpl(
+    return _then(_$PageNavigatedImpl(
       freezed == route
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
@@ -208,8 +208,8 @@ class __$$NavigatedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NavigatedImpl implements _Navigated {
-  const _$NavigatedImpl(this.route);
+class _$PageNavigatedImpl implements _PageNavigated {
+  const _$PageNavigatedImpl(this.route);
 
   @override
   final String? route;
@@ -223,7 +223,7 @@ class _$NavigatedImpl implements _Navigated {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NavigatedImpl &&
+            other is _$PageNavigatedImpl &&
             (identical(other.route, route) || other.route == route));
   }
 
@@ -233,8 +233,8 @@ class _$NavigatedImpl implements _Navigated {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NavigatedImplCopyWith<_$NavigatedImpl> get copyWith =>
-      __$$NavigatedImplCopyWithImpl<_$NavigatedImpl>(this, _$identity);
+  _$$PageNavigatedImplCopyWith<_$PageNavigatedImpl> get copyWith =>
+      __$$PageNavigatedImplCopyWithImpl<_$PageNavigatedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -270,8 +270,8 @@ class _$NavigatedImpl implements _Navigated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Navigated value) navigated,
+    required TResult Function(_PageStarted value) started,
+    required TResult Function(_PageNavigated value) navigated,
   }) {
     return navigated(this);
   }
@@ -279,8 +279,8 @@ class _$NavigatedImpl implements _Navigated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_Navigated value)? navigated,
+    TResult? Function(_PageStarted value)? started,
+    TResult? Function(_PageNavigated value)? navigated,
   }) {
     return navigated?.call(this);
   }
@@ -288,8 +288,8 @@ class _$NavigatedImpl implements _Navigated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Navigated value)? navigated,
+    TResult Function(_PageStarted value)? started,
+    TResult Function(_PageNavigated value)? navigated,
     required TResult orElse(),
   }) {
     if (navigated != null) {
@@ -299,12 +299,12 @@ class _$NavigatedImpl implements _Navigated {
   }
 }
 
-abstract class _Navigated implements PageEvent {
-  const factory _Navigated(final String? route) = _$NavigatedImpl;
+abstract class _PageNavigated implements PageEvent {
+  const factory _PageNavigated(final String? route) = _$PageNavigatedImpl;
 
   String? get route;
   @JsonKey(ignore: true)
-  _$$NavigatedImplCopyWith<_$NavigatedImpl> get copyWith =>
+  _$$PageNavigatedImplCopyWith<_$PageNavigatedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -329,17 +329,17 @@ mixin _$PageState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_update value) view,
+    required TResult Function(PageViewed value) view,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_update value)? view,
+    TResult? Function(PageViewed value)? view,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_update value)? view,
+    TResult Function(PageViewed value)? view,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -382,21 +382,22 @@ class _$PageStateCopyWithImpl<$Res, $Val extends PageState>
 }
 
 /// @nodoc
-abstract class _$$updateImplCopyWith<$Res> implements $PageStateCopyWith<$Res> {
-  factory _$$updateImplCopyWith(
-          _$updateImpl value, $Res Function(_$updateImpl) then) =
-      __$$updateImplCopyWithImpl<$Res>;
+abstract class _$$PageViewedImplCopyWith<$Res>
+    implements $PageStateCopyWith<$Res> {
+  factory _$$PageViewedImplCopyWith(
+          _$PageViewedImpl value, $Res Function(_$PageViewedImpl) then) =
+      __$$PageViewedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String current});
 }
 
 /// @nodoc
-class __$$updateImplCopyWithImpl<$Res>
-    extends _$PageStateCopyWithImpl<$Res, _$updateImpl>
-    implements _$$updateImplCopyWith<$Res> {
-  __$$updateImplCopyWithImpl(
-      _$updateImpl _value, $Res Function(_$updateImpl) _then)
+class __$$PageViewedImplCopyWithImpl<$Res>
+    extends _$PageStateCopyWithImpl<$Res, _$PageViewedImpl>
+    implements _$$PageViewedImplCopyWith<$Res> {
+  __$$PageViewedImplCopyWithImpl(
+      _$PageViewedImpl _value, $Res Function(_$PageViewedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -404,7 +405,7 @@ class __$$updateImplCopyWithImpl<$Res>
   $Res call({
     Object? current = null,
   }) {
-    return _then(_$updateImpl(
+    return _then(_$PageViewedImpl(
       null == current
           ? _value.current
           : current // ignore: cast_nullable_to_non_nullable
@@ -415,8 +416,8 @@ class __$$updateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$updateImpl implements _update {
-  const _$updateImpl(this.current);
+class _$PageViewedImpl implements PageViewed {
+  const _$PageViewedImpl(this.current);
 
   @override
   final String current;
@@ -430,7 +431,7 @@ class _$updateImpl implements _update {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$updateImpl &&
+            other is _$PageViewedImpl &&
             (identical(other.current, current) || other.current == current));
   }
 
@@ -440,8 +441,8 @@ class _$updateImpl implements _update {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$updateImplCopyWith<_$updateImpl> get copyWith =>
-      __$$updateImplCopyWithImpl<_$updateImpl>(this, _$identity);
+  _$$PageViewedImplCopyWith<_$PageViewedImpl> get copyWith =>
+      __$$PageViewedImplCopyWithImpl<_$PageViewedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -474,7 +475,7 @@ class _$updateImpl implements _update {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_update value) view,
+    required TResult Function(PageViewed value) view,
   }) {
     return view(this);
   }
@@ -482,7 +483,7 @@ class _$updateImpl implements _update {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_update value)? view,
+    TResult? Function(PageViewed value)? view,
   }) {
     return view?.call(this);
   }
@@ -490,7 +491,7 @@ class _$updateImpl implements _update {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_update value)? view,
+    TResult Function(PageViewed value)? view,
     required TResult orElse(),
   }) {
     if (view != null) {
@@ -500,13 +501,13 @@ class _$updateImpl implements _update {
   }
 }
 
-abstract class _update implements PageState {
-  const factory _update(final String current) = _$updateImpl;
+abstract class PageViewed implements PageState {
+  const factory PageViewed(final String current) = _$PageViewedImpl;
 
   @override
   String get current;
   @override
   @JsonKey(ignore: true)
-  _$$updateImplCopyWith<_$updateImpl> get copyWith =>
+  _$$PageViewedImplCopyWith<_$PageViewedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

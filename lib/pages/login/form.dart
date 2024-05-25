@@ -192,6 +192,15 @@ class _Form extends HookWidget {
                     form.markAllAsTouched();
                     return;
                   }
+                  final details = Map<String, String?>.from(form.value);
+                  context.read<LoginBloc>().add(
+                        LoginEvent.userLoggedIn(
+                          (
+                            username: details[LoginRequestKeys.username] ?? '',
+                            password: details[LoginRequestKeys.password] ?? '',
+                          ),
+                        ),
+                      );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF680212),

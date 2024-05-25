@@ -18,4 +18,5 @@ class Messages {
   static const completion_exception =
       'Unable to complete.\nPlease contact support';
   static const generic_error = 'Something went wrong. Retry or contact support';
+  static const user_missing = 'No user found';
 }
