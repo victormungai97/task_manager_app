@@ -1,7 +1,9 @@
 // widgets/misc/src/title.dart
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:task_manager_app/constants/constants.dart';
+import 'package:task_manager_app/models/models.dart';
 
 /// Widget to visualize represent the application
 
@@ -37,7 +39,7 @@ class Title extends StatelessWidget {
             upDown ? MainAxisAlignment.start : MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            backgroundColor: Colors.white.withOpacity(.9),
+            backgroundColor: Colors.white.withValues(alpha: .9),
             radius: upDown ? 70 : 20,
             child: Image.asset(
               'images/pin.png',
@@ -48,14 +50,18 @@ class Title extends StatelessWidget {
             ),
           ),
           if (upDown) const SizedBox(height: 8) else const SizedBox(width: 16),
-          Text(
-            Labels.application,
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 28,
-              color: textColor,
-            ),
-            textAlign: TextAlign.center,
+          Consumer<ApplicationModel>(
+            builder: (context, application, widget) {
+              return Text(
+                application.name ?? Labels.application,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 28,
+                  color: textColor,
+                ),
+                textAlign: TextAlign.center,
+              );
+            },
           ),
         ],
       ),

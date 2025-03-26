@@ -2,6 +2,25 @@
 
 part of 'strings.dart';
 
+/// Keys for metadata associated with the application
+
+abstract final class ApplicationModelKeys {
+  /// Key for application display name
+  static const displayName = 'display_name';
+
+  /// Key for package name
+  static const packageName = 'package_name';
+
+  /// Key for developer of the application
+  static const author = 'author';
+
+  /// Key for application version
+  static const appVersion = 'app_version';
+
+  /// Key for identifier of the currently installed application
+  static const installationId = 'app_install_id';
+}
+
 /// Keys utilized when signing in a user
 
 abstract class LoginRequestKeys {
@@ -43,7 +62,7 @@ abstract class UserModelKeys {
   static const authToken = 'token';
 }
 
-/// Keys used in local persistent storgae
+/// Keys used in local persistent storage
 
 abstract class LocalDatabaseKeys {
   /// Key for holding prior logged in usernames

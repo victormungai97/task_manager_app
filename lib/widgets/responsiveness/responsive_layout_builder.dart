@@ -2,12 +2,6 @@
 
 part of 'responsiveness.dart';
 
-/// The signature of the [LayoutBuilder] builder function.
-typedef ResponsiveLayoutWidgetBuilder = Widget Function(
-  BuildContext context,
-  SizingInformation sizingInformation,
-);
-
 /// Widget that defers its building until layout upon
 /// determining of device conditions
 

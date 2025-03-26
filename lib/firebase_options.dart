@@ -49,7 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '426404494062',
     projectId: 'task-manager-app-b6d82',
     authDomain: 'task-manager-app-b6d82.firebaseapp.com',
-    storageBucket: 'task-manager-app-b6d82.appspot.com',
+    storageBucket: 'task-manager-app-b6d82.firebasestorage.app',
     measurementId: 'G-7GZGV1F38M',
   );
 
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
     appId: '1:426404494062:android:e68d21392eeb0076b2d1ff',
     messagingSenderId: '426404494062',
     projectId: 'task-manager-app-b6d82',
-    storageBucket: 'task-manager-app-b6d82.appspot.com',
+    storageBucket: 'task-manager-app-b6d82.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -66,16 +66,21 @@ class DefaultFirebaseOptions {
     appId: '1:426404494062:ios:9fd6f8215d9eec61b2d1ff',
     messagingSenderId: '426404494062',
     projectId: 'task-manager-app-b6d82',
-    storageBucket: 'task-manager-app-b6d82.appspot.com',
+    storageBucket: 'task-manager-app-b6d82.firebasestorage.app',
+    androidClientId: '426404494062-h903ktg40aqqos3520avkfghst7978og.apps.googleusercontent.com',
+    iosClientId: '426404494062-lksru07tqgtnc5tmrcm2lf3urhmam4dj.apps.googleusercontent.com',
     iosBundleId: 'com.example.taskmanager.taskManagerApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBxeaqsVlpMc_hPIUiJLxb7G3oie0ICjO0',
-    appId: '1:426404494062:ios:df3538dcafa66843b2d1ff',
+    appId: '1:426404494062:ios:9fd6f8215d9eec61b2d1ff',
     messagingSenderId: '426404494062',
     projectId: 'task-manager-app-b6d82',
-    storageBucket: 'task-manager-app-b6d82.appspot.com',
-    iosBundleId: 'com.example.taskmanager.taskManagerApp.RunnerTests',
+    storageBucket: 'task-manager-app-b6d82.firebasestorage.app',
+    androidClientId: '426404494062-h903ktg40aqqos3520avkfghst7978og.apps.googleusercontent.com',
+    iosClientId: '426404494062-lksru07tqgtnc5tmrcm2lf3urhmam4dj.apps.googleusercontent.com',
+    iosBundleId: 'com.example.taskmanager.taskManagerApp',
   );
+
 }

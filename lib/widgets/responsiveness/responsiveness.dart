@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:task_manager_app/constants/constants.dart';
+import 'package:task_manager_app/utilities/extras/extras.dart';
 
 part 'orientation_layout.dart';
 part 'responsive_layout_builder.dart';

@@ -1,21 +1,10 @@
-// listenables/src/hive_listenable_builder.dart
+// widgets/listenables/src/hive_listenable_builder.dart
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-
-/// Builds a [Widget] when given a concrete value of a [Box<T>].
-///
-/// If the `child` parameter provided to the [HiveListenableBuilder] is not
-/// null, the same `child` widget is passed back to this [ValueWidgetBuilder]
-/// and should typically be incorporated in the returned widget tree.
-///
-/// See also:
-///
-///  * [HiveListenableBuilder], a widget which invokes this builder each time
-///    a [Box] changes value.
-typedef BoxWidgetBuilder<T> = Widget Function(Box<T> box, Widget? child);
+import 'package:hive_flutter/hive_flutter.dart' hide BoxWidgetBuilder;
+import 'package:task_manager_app/utilities/extras/extras.dart';
 
 /// A widget whose content stays synced with a [Box].
 ///

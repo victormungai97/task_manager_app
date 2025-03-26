@@ -46,7 +46,7 @@ class _Mobile extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.topCenter,
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
         child,
       ],

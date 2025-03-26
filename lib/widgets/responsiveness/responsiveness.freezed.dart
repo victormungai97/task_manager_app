@@ -28,7 +28,9 @@ mixin _$SizingInformation {
   /// Localized size of the specified widget
   Size get localWidgetSize => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SizingInformation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SizingInformationCopyWith<SizingInformation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +58,8 @@ class _$SizingInformationCopyWithImpl<$Res, $Val extends SizingInformation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SizingInformation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +112,8 @@ class __$$SizingInformationImplCopyWithImpl<$Res>
       $Res Function(_$SizingInformationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SizingInformation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,7 +187,9 @@ class _$SizingInformationImpl implements _SizingInformation {
   int get hashCode => Object.hash(
       runtimeType, orientation, deviceScreenType, screenSize, localWidgetSize);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SizingInformation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SizingInformationImplCopyWith<_$SizingInformationImpl> get copyWith =>
@@ -196,24 +204,26 @@ abstract class _SizingInformation implements SizingInformation {
       required final Size screenSize,
       required final Size localWidgetSize}) = _$SizingInformationImpl;
 
-  @override
-
   /// Direction in which device is physically facing / directed
-  Orientation get orientation;
   @override
+  Orientation get orientation;
 
   /// Specific device on which app is running
-  DeviceScreenType get deviceScreenType;
   @override
+  DeviceScreenType get deviceScreenType;
 
   /// Device screen's size
-  Size get screenSize;
   @override
+  Size get screenSize;
 
   /// Localized size of the specified widget
-  Size get localWidgetSize;
   @override
-  @JsonKey(ignore: true)
+  Size get localWidgetSize;
+
+  /// Create a copy of SizingInformation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SizingInformationImplCopyWith<_$SizingInformationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

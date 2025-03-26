@@ -4,20 +4,23 @@ part of 'interceptors.dart';
 
 /// Custom Interceptor for keeping track of and recording HTTP calls
 
-class LoggingInterceptor extends InterceptorContract {
-  static const _logger = LoggingService.instance;
+class LoggingInterceptor extends BaseInterceptor {
+  /// Create an instance of [LoggingInterceptor]
+  LoggingInterceptor({super.onError});
 
   @override
   Future<BaseRequest> interceptRequest({required BaseRequest request}) async {
     if (request is Request) {
-      final headers = await _logger.prettyPrint(request.headers);
-      final body = await _logger.prettyPrint(request.body);
-      _logger
-        ..debugLog('\n=============REQUEST=============\n')
-        ..debugLog('url >>>>>>>>>>>>>>>> ${request.url}')
-        ..debugLog('body >>>>>>>>>>>>>>>> $body')
-        ..debugLog('headers >>>>>>>>>>>>>>>> $headers')
-        ..debugLog('method >>>>>>>>>>>>>>>> ${request.method}');
+      final headers = await Logger.prettyPrint(request.headers);
+      final body = await Logger.prettyPrint(request.body);
+      final sb = StringBuffer('\n')
+        ..writeln('=============REQUEST=============')
+        ..writeln('url >>>>>>>>>>>>>>>> ${request.url}')
+        ..writeln('body >>>>>>>>>>>>>>>> $body')
+        ..writeln('headers >>>>>>>>>>>>>>>> $headers')
+        ..writeln('method >>>>>>>>>>>>>>>> ${request.method}');
+      await log(sb.toString());
+      sb.clear();
     }
     return request;
   }
@@ -27,14 +30,17 @@ class LoggingInterceptor extends InterceptorContract {
     required BaseResponse response,
   }) async {
     if (response is Response) {
-      final headers = await _logger.prettyPrint(response.headers);
-      final body = await _logger.prettyPrint(response.body);
+      final headers = await Logger.prettyPrint(response.headers);
+      final body = await Logger.prettyPrint(response.body);
       final httpCode = response.statusCode;
-      _logger
-        ..debugLog('\n=============RESPONSE=============\n')
-        ..debugLog('statusCode >>>>>>>>>>>>>>>> $httpCode')
-        ..debugLog('headers >>>>>>>>>>>>>>>> $headers')
-        ..debugLog('body >>>>>>>>>>>>>>>> $body');
+      final sb = StringBuffer('\n')
+        ..writeln('=============RESPONSE=============')
+        ..writeln('statusCode >>>>>>>>>>>>>>>> $httpCode')
+        ..writeln('headers >>>>>>>>>>>>>>>> $headers')
+        ..writeln('body >>>>>>>>>>>>>>>> $body');
+
+      await log(sb.toString());
+      sb.clear();
     }
     return response;
   }

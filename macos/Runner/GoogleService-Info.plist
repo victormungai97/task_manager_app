@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>426404494062-lksru07tqgtnc5tmrcm2lf3urhmam4dj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.426404494062-lksru07tqgtnc5tmrcm2lf3urhmam4dj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>426404494062-h903ktg40aqqos3520avkfghst7978og.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBxeaqsVlpMc_hPIUiJLxb7G3oie0ICjO0</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,11 +15,11 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.taskmanager.taskManagerApp.RunnerTests</string>
+	<string>com.example.taskmanager.taskManagerApp</string>
 	<key>PROJECT_ID</key>
 	<string>task-manager-app-b6d82</string>
 	<key>STORAGE_BUCKET</key>
-	<string>task-manager-app-b6d82.appspot.com</string>
+	<string>task-manager-app-b6d82.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:426404494062:ios:df3538dcafa66843b2d1ff</string>
+	<string>1:426404494062:ios:9fd6f8215d9eec61b2d1ff</string>
 </dict>
 </plist>

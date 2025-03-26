@@ -3,17 +3,18 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:task_manager_app/blocs/blocs.dart';
+import 'package:provider/provider.dart';
 import 'package:task_manager_app/constants/constants.dart';
+import 'package:task_manager_app/models/models.dart';
 import 'package:task_manager_app/navigation/navigation.dart';
-import 'package:task_manager_app/services/logging_service.dart';
-import 'package:task_manager_app/services/login_service.dart';
+import 'package:task_manager_app/utilities/extensions/extensions.dart';
+import 'package:task_manager_app/utilities/extras/extras.dart';
 
 /// This is the starting point for the widget tree
 
-class TaskManagerApp extends StatefulWidget {
+class TaskManagerApp extends StatefulHookWidget {
   /// Creates a ``[TaskManagerApp]`` instance
   const TaskManagerApp({super.key});
 
@@ -22,30 +23,37 @@ class TaskManagerApp extends StatefulWidget {
 }
 
 class _TaskManagerAppState extends State<TaskManagerApp> {
-  static final log = LoggingService.instance.debugLog;
-
-  final _pagesBloc = PagesBloc();
-
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider.value(value: _pagesBloc),
-        BlocProvider(
-          create: (context) => LoginBloc(context.read<LoginService>()),
-        ),
-      ],
-      child: MaterialApp.router(
-        routerConfig: CustomRouter(
-          CustomRouteObserver(
-            (String? route) => _pagesBloc.add(PageEvent.navigated(route)),
-          ),
-        ),
-        theme: lightTheme,
-        title: Labels.application,
-        debugShowCheckedModeBanner: false,
-      ),
+    final application = context.watch<ApplicationModel>();
+    final defaultAppDetailsFuture = useMemoized(
+      () async => _setDefaultApplicationDetails(application),
+      [application],
     );
+
+    return FutureBuilder(
+      builder: (context, snapshot) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: lightTheme,
+          routerConfig: CustomRouter(
+            CustomRouteObserver(
+              onNavigated: (routeName) async => Logger.logEvent(
+                'screen_view',
+                {'screen_name': routeName},
+              ),
+            ),
+          ),
+          title: application.name,
+        );
+      },
+      future: defaultAppDetailsFuture,
+    );
+  }
+
+  Future<void> _setDefaultApplicationDetails(ApplicationModel details) async {
+    if (!details.name.exists) return;
+    await Logger.setDefaultLogParameters(details.toJson());
   }
 
   @override
@@ -56,15 +64,14 @@ class _TaskManagerAppState extends State<TaskManagerApp> {
       ]).then(
         (boxes) async {
           await Future.wait(boxes.map((box) async => box.close()))
-              .then((_) => log('Hive boxes successfully closed', level: 800))
+              .then((_) => debugPrint('Hive boxes successfully closed'))
               .catchError(
-                (Object? error, StackTrace stackTrace) => log(
-                  'Hive boxes closing Failure',
-                  level: 1000,
-                  error: error,
-                  stackTrace: stackTrace,
-                ),
-              );
+            (Object? error, StackTrace stackTrace) {
+              debugPrint('Hive boxes closing Failure');
+              debugPrint(error.toString());
+              debugPrintStack(stackTrace: stackTrace);
+            },
+          );
         },
       );
     });
