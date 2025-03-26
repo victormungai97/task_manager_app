@@ -2,10 +2,6 @@
 
 part of 'navigation.dart';
 
-String? defaultNameExtractor(RouteSettings settings) => settings.name;
-
-bool defaultRouteFilter(Route<dynamic>? route) => route is PageRoute;
-
 /// A [Navigator] observer for notifying and recording when the
 /// currently active [ModalRoute] changes.
 ///

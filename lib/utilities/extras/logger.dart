@@ -10,19 +10,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:task_manager_app/utilities/extensions/extensions.dart';
-import 'package:task_manager_app/utilities/extras/typedefs.dart';
-
-/// Function to printing errors
-/// Useful for testing
-ErrorFn defaultErrorLog = (
-  Object? error, {
-  String? message,
-  StackTrace? stackTrace,
-}) {
-  debugPrint(message ?? 'An error occurred');
-  debugPrint(error.toString());
-  debugPrintStack(stackTrace: stackTrace);
-};
 
 /// Utility for logging purposes
 class Logger {
