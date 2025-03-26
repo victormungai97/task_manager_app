@@ -20,8 +20,8 @@ import 'package:task_manager_app/blocs/blocs.dart';
 import 'package:task_manager_app/constants/constants.dart';
 import 'package:task_manager_app/firebase_options.dart';
 import 'package:task_manager_app/models/models.dart';
-import 'package:task_manager_app/networking/networking.dart';
-import 'package:task_manager_app/utilities/extras/logger.dart';
+import 'package:task_manager_app/utilities/extras/extras.dart';
+import 'package:task_manager_app/utilities/networking/networking.dart';
 import 'package:uuid/uuid.dart';
 
 void main() async {
