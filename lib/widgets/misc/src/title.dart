@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:task_manager_app/constants/constants.dart';
 import 'package:task_manager_app/models/models.dart';
 
-/// Widget to visualize represent the application
+/// Widget to visualize represent the application's display name
 
 class Title extends StatelessWidget {
   /// Construct a ``[Title]``
